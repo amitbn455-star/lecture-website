@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amitbarnerlecture.netlify.app/sitemap.xml
