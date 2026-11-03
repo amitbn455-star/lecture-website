@@ -1955,7 +1955,23 @@
         }
 
     
-</style>
+
+        /* Audiences */
+        .aud { background: var(--turquoise-dark); color: var(--white); padding: 96px 40px; }
+        .aud-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start; }
+        .aud-intro { position: sticky; top: 48px; text-align: right; }
+        .aud-label { color: var(--accent-sand); font-size: 15px; font-weight: 500; letter-spacing: .08em; margin-bottom: 16px; }
+        .aud h2 { color: var(--white); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.08; font-weight: 900; margin: 0 0 22px; text-align: right; }
+        .aud-intro p { color: #C4DEDB; font-size: 19px; line-height: 1.7; max-width: 30ch; margin: 0; }
+        .aud-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(244, 228, 193, .35); }
+        .aud-item { padding: 28px 0; border-bottom: 1px solid rgba(244, 228, 193, .35); }
+        .aud-item h3 { font-size: clamp(26px, 3vw, 36px); font-weight: 800; line-height: 1.2; color: var(--white); margin: 0 0 8px; transition: color .2s ease, transform .2s ease; }
+        .aud-item p { margin: 0; color: #B7D3D0; font-size: 17px; line-height: 1.7; max-width: 46ch; }
+        @media (hover: hover) { .aud-item:hover h3 { color: var(--accent-sand); transform: translateX(-10px); } }
+        @media (max-width: 860px) { .aud-grid { grid-template-columns: 1fr; gap: 36px; } .aud-intro { position: static; } .aud { padding: 64px 25px !important; } }
+        .method-icon { display: inline-flex; width: 26px; height: 26px; }
+        .method-icon svg { width: 100%; height: 100%; }
+    </style>
     </head>
 <body>
 
@@ -2145,51 +2161,21 @@
     
         
     <!-- Audience Types Section -->
-    <section style="padding: 70px 40px; background: var(--off-white);">
-        <div class="container">
-            <div>03 / לאילו קהלים</div>
-            <h2>ההרצאה מתאימה לכל קהל</h2>
-            <p class="section-text" style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
-                הסיפור והמסרים רלוונטיים לכולם - מצעירים ועד מבוגרים, מתלמידים ועד מנהלים
-            </p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
-                <div style="background: white; padding: 35px 30px; border-radius: 12px; border-right: 4px solid var(--turquoise); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="font-size: 42px; margin-bottom: 20px;">🎓</div>
-                    <h3 style="font-size: 22px; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 15px;">תלמידים וצעירים</h3>
-                    <p style="font-size: 16px; line-height: 1.7; color: #666;">תיכוניסטים, מכינות קדם צבאיות, צעירים לפני הצבא - על התמודדות, חוסן נפשי והערכת החיים.</p>
-                </div>
-                
-                <div style="background: white; padding: 35px 30px; border-radius: 12px; border-right: 4px solid var(--turquoise); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="font-size: 42px; margin-bottom: 20px;">💼</div>
-                    <h3 style="font-size: 22px; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 15px;">עובדים וארגונים</h3>
-                    <p style="font-size: 16px; line-height: 1.7; color: #666;">צוותי עובדים, חברות, ארגונים - על התמודדות עם אתגרים, מוטיבציה והשראה בעבודה ובחיים.</p>
-                </div>
-                
-                <div style="background: white; padding: 35px 30px; border-radius: 12px; border-right: 4px solid var(--turquoise); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="font-size: 42px; margin-bottom: 20px;">👥</div>
-                    <h3 style="font-size: 22px; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 15px;">מבוגרים וקהילות</h3>
-                    <p style="font-size: 16px; line-height: 1.7; color: #666;">קבוצות מבוגרים, קהילות, מרכזים קהילתיים - סיפור שמדבר אל הלב ומשאיר מסר חזק.</p>
-                </div>
-                
-                <div style="background: white; padding: 35px 30px; border-radius: 12px; border-right: 4px solid var(--turquoise); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="font-size: 42px; margin-bottom: 20px;">🏥</div>
-                    <h3 style="font-size: 22px; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 15px;">מסגרות טיפוליות</h3>
-                    <p style="font-size: 16px; line-height: 1.7; color: #666;">בתי ילדים, מסגרות שיקומיות, קבוצות תמיכה - על כוח השיקום והבחירה להמשיך.</p>
-                </div>
-                
-                <div style="background: white; padding: 35px 30px; border-radius: 12px; border-right: 4px solid var(--turquoise); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="font-size: 42px; margin-bottom: 20px;">🎯</div>
-                    <h3 style="font-size: 22px; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 15px;">אירועים מיוחדים</h3>
-                    <p style="font-size: 16px; line-height: 1.7; color: #666;">כנסים, ימי עיון, אירועי חברה - הרצאה שמשאירה חותם ומעוררת השראה.</p>
-                </div>
-                
-                <div style="background: white; padding: 35px 30px; border-radius: 12px; border-right: 4px solid var(--turquoise); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="font-size: 42px; margin-bottom: 20px;">✨</div>
-                    <h3 style="font-size: 22px; font-weight: 700; color: var(--turquoise-dark); margin-bottom: 15px;">התאמה אישית</h3>
-                    <p style="font-size: 16px; line-height: 1.7; color: #666;">ההרצאה מותאמת לכל קהל - ניתן להתאים את התוכן, האורך והסגנון לצרכים שלכם.</p>
-                </div>
+    <section class="aud" id="audiences">
+        <div class="aud-grid">
+            <div class="aud-intro">
+                <div class="aud-label">לאילו קהלים</div>
+                <h2>ההרצאה מתאימה לכל קהל</h2>
+                <p>הסיפור והמסרים רלוונטיים לכולם, מצעירים ועד מבוגרים, מתלמידים ועד מנהלים.</p>
             </div>
+            <ul class="aud-list">
+                    <li class="aud-item"><h3>תלמידים וצעירים</h3><p>תיכוניסטים, מכינות קדם צבאיות, צעירים לפני הצבא. על התמודדות, חוסן נפשי והערכת החיים.</p></li>
+                    <li class="aud-item"><h3>עובדים וארגונים</h3><p>צוותי עובדים, חברות, ארגונים. על התמודדות עם אתגרים, מוטיבציה והשראה בעבודה ובחיים.</p></li>
+                    <li class="aud-item"><h3>מבוגרים וקהילות</h3><p>קבוצות מבוגרים, קהילות, מרכזים קהילתיים. סיפור שמדבר אל הלב ומשאיר מסר חזק.</p></li>
+                    <li class="aud-item"><h3>מסגרות טיפוליות</h3><p>בתי ילדים, מסגרות שיקומיות, קבוצות תמיכה. על כוח השיקום והבחירה להמשיך.</p></li>
+                    <li class="aud-item"><h3>אירועים מיוחדים</h3><p>כנסים, ימי עיון, אירועי חברה. הרצאה שמשאירה חותם ומעוררת השראה.</p></li>
+                    <li class="aud-item"><h3>התאמה אישית</h3><p>התוכן, האורך והסגנון מותאמים לקהל ולצרכים שלכם.</p></li>
+            </ul>
         </div>
     </section>
 
@@ -2253,12 +2239,12 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 50px; padding: 30px; background: white; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; box-shadow: 0 4px 15px rgba(10, 107, 107, 0.15);">
-                <p style="font-size: 20px; color: #0A6B6B; font-weight: 800; margin-bottom: 20px;">📬 יצירת קשר</p>
-                <p style="font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 600;">📧 מייל:</p>
+                <p style="font-size: 20px; color: #0A6B6B; font-weight: 800; margin-bottom: 20px;">יצירת קשר</p>
+                <p style="font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 600;">מייל:</p>
                 <p style="font-size: 17px; color: #0A6B6B; margin-bottom: 20px;">
                     <a href="mailto:amitbn455@gmail.com" style="color: #0A6B6B; text-decoration: underline; font-weight: 600;">amitbn455@gmail.com</a>
                 </p>
-                <p style="font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 600;">📱 טלפון:</p>
+                <p style="font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 600;">טלפון:</p>
                 <p style="font-size: 17px; color: #0A6B6B; margin: 0;">
                     <a href="tel:0585192003" style="color: #0A6B6B; text-decoration: underline; font-weight: 600;">058-519-2003</a>
                 </p>
@@ -2341,11 +2327,11 @@
                 <p>או צרו קשר ישירות:</p>
                 <div class="contact-methods">
                     <a href="mailto:amitbn455@gmail.com" class="contact-method">
-                        <span class="method-icon">📧</span>
+                        <span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
                         <span>amitbn455@gmail.com</span>
                     </a>
                     <a href="tel:0585192003" class="contact-method">
-                        <span class="method-icon">📞</span>
+                        <span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span>
                         <span>058-519-2003</span>
                     </a>
                 </div>
@@ -2401,7 +2387,7 @@
             gap: 10px;
             animation: fadeInUp 0.3s ease;
         ">
-            <p style="font-size:15px; font-weight:700; color:#064E4E; margin:0 0 6px 0;">✍️ שלח הודעה מהירה לעמית</p>
+            <p style="font-size:15px; font-weight:700; color:#064E4E; margin:0 0 6px 0;">שלח הודעה מהירה לעמית</p>
             <textarea id="wa-msg" aria-label="הודעה בוואטסאפ" rows="3" placeholder="מה תרצה לשאול? (אפשר לשנות את ההודעה)" style="
                 width:100%;
                 border: 2px solid #e0e0e0;
@@ -2414,7 +2400,7 @@
                 outline: none;
                 transition: border 0.2s;
                 direction: rtl;
-            ">שלום עמית, ראיתי את האתר ואשמח לשמוע יותר על ההרצאה 🙏</textarea>
+            ">שלום עמית, ראיתי את האתר ואשמח לשמוע יותר על ההרצאה</textarea>
             <button onclick="sendWA()" style="
                 background: #25D366;
                 color: white;
