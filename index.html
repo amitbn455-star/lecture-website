@@ -1957,18 +1957,43 @@
     
 
         /* Audiences */
-        .aud { background: var(--turquoise-dark); color: var(--white); padding: 96px 40px; }
-        .aud-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start; }
-        .aud-intro { position: sticky; top: 48px; text-align: right; }
-        .aud-label { color: var(--accent-sand); font-size: 15px; font-weight: 500; letter-spacing: .08em; margin-bottom: 16px; }
-        .aud h2 { color: var(--white); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.08; font-weight: 900; margin: 0 0 22px; text-align: right; }
-        .aud-intro p { color: #C4DEDB; font-size: 19px; line-height: 1.7; max-width: 30ch; margin: 0; }
-        .aud-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(244, 228, 193, .35); }
-        .aud-item { padding: 28px 0; border-bottom: 1px solid rgba(244, 228, 193, .35); }
-        .aud-item h3 { font-size: clamp(26px, 3vw, 36px); font-weight: 800; line-height: 1.2; color: var(--white); margin: 0 0 8px; transition: color .2s ease, transform .2s ease; }
-        .aud-item p { margin: 0; color: #B7D3D0; font-size: 17px; line-height: 1.7; max-width: 46ch; }
-        @media (hover: hover) { .aud-item:hover h3 { color: var(--accent-sand); transform: translateX(-10px); } }
-        @media (max-width: 860px) { .aud-grid { grid-template-columns: 1fr; gap: 36px; } .aud-intro { position: static; } .aud { padding: 64px 25px !important; } }
+        .aud { background: var(--off-white); padding: 96px 40px; }
+        .aud-wrap { max-width: 1200px; margin: 0 auto; }
+        .aud-head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px 56px; align-items: end; margin-bottom: 44px; }
+        .aud-label { grid-column: 1 / -1; color: var(--turquoise); font-size: 15px; font-weight: 700; letter-spacing: .08em; }
+        .aud h2 { text-wrap: balance; font-size: clamp(34px, 4.4vw, 54px); line-height: 1.08; font-weight: 900; color: var(--turquoise-dark); margin: 0; text-align: right; }
+        .aud-head p { margin: 0; color: #4A5A5A; font-size: 19px; line-height: 1.7; max-width: 38ch; }
+        .aud-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; }
+        .aud-tile { position: relative; overflow: hidden; border-radius: 6px; min-height: 270px; padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; transition: transform .25s ease, box-shadow .25s ease; }
+        .aud-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+        .aud-tile.photo { color: var(--white); background: var(--turquoise-dark); }
+        .aud-tile.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,40,40,0) 15%, rgba(6,40,40,.92) 100%); }
+        .aud-tx { position: relative; z-index: 1; }
+        .aud-tile h3 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 800; line-height: 1.2; margin: 0 0 10px; }
+        .aud-tile p { margin: 0; font-size: 16.5px; line-height: 1.65; max-width: 44ch; }
+        .t-youth { grid-column: span 4; min-height: 340px; }
+        .t-adults { grid-column: span 2; }
+        .t-work, .t-care, .t-events { grid-column: span 2; min-height: 330px; }
+        .t-custom { grid-column: span 6; min-height: 0; flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+        .aud-tile.sand { background: var(--accent-sand); color: var(--turquoise-dark); }
+        .aud-tile.teal { background: var(--turquoise); color: var(--white); }
+        .t-custom { background: var(--turquoise-dark); color: var(--white); }
+        .t-custom p { color: #C4DEDB; }
+        .aud-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--accent-sand); color: var(--turquoise-dark); font-weight: 800; font-size: 17px; padding: 14px 26px; border-radius: 50px; text-decoration: none; }
+        @media (hover: hover) {
+            .aud-tile:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(6, 78, 78, .18); }
+            .aud-tile.photo:hover img { transform: scale(1.05); }
+            .aud-cta:hover { background: var(--white); }
+        }
+        @media (max-width: 860px) {
+            .aud { padding: 64px 25px !important; }
+            .aud-head { grid-template-columns: 1fr; margin-bottom: 30px; }
+            .aud-grid { grid-template-columns: 1fr; }
+            .t-youth, .t-adults, .t-work, .t-care, .t-events, .t-custom { grid-column: 1; }
+            .aud-tile { min-height: 230px; padding: 26px; }
+            .t-adults, .t-care { min-height: 0; } .aud-tile.photo { min-height: 300px; }
+            .t-custom { flex-direction: column; align-items: flex-start; }
+        }
         .method-icon { display: inline-flex; width: 26px; height: 26px; }
         .method-icon svg { width: 100%; height: 100%; }
     </style>
@@ -2162,20 +2187,38 @@
         
     <!-- Audience Types Section -->
     <section class="aud" id="audiences">
-        <div class="aud-grid">
-            <div class="aud-intro">
+        <div class="aud-wrap">
+            <header class="aud-head">
                 <div class="aud-label">לאילו קהלים</div>
                 <h2>ההרצאה מתאימה לכל קהל</h2>
                 <p>הסיפור והמסרים רלוונטיים לכולם, מצעירים ועד מבוגרים, מתלמידים ועד מנהלים.</p>
+            </header>
+            <div class="aud-grid">
+            <article class="aud-tile t-youth photo">
+                <img src="images/lecture-youth.webp" alt="עמית מעביר הרצאה לקבוצת צעירים" loading="lazy" decoding="async" style="object-position:80% 50%">
+                <div class="aud-tx"><h3>תלמידים וצעירים</h3><p>תיכוניסטים, מכינות קדם צבאיות וצעירים לפני הצבא. על התמודדות, חוסן נפשי והערכת החיים.</p></div>
+            </article>
+            <article class="aud-tile t-adults sand">
+                
+                <div class="aud-tx"><h3>מבוגרים וקהילות</h3><p>קבוצות מבוגרים, קהילות ומרכזים קהילתיים. סיפור שמדבר אל הלב ומשאיר מסר חזק.</p></div>
+            </article>
+            <article class="aud-tile t-work photo">
+                <img src="images/lecture-audience.webp" alt="קהל בהרצאה בארגון" loading="lazy" decoding="async" style="object-position:50% 10%">
+                <div class="aud-tx"><h3>עובדים וארגונים</h3><p>צוותים, חברות וארגונים. על התמודדות עם אתגרים, מוטיבציה והשראה בעבודה ובחיים.</p></div>
+            </article>
+            <article class="aud-tile t-care teal">
+                
+                <div class="aud-tx"><h3>מסגרות טיפוליות</h3><p>בתי ילדים, מסגרות שיקומיות וקבוצות תמיכה. על כוח השיקום והבחירה להמשיך.</p></div>
+            </article>
+            <article class="aud-tile t-events photo">
+                <img src="images/lecture-speaking.webp" alt="עמית על הבמה, ליד שקף הכותרת של ההרצאה" loading="lazy" decoding="async" style="object-position:20% 15%">
+                <div class="aud-tx"><h3>אירועים מיוחדים</h3><p>כנסים, ימי עיון ואירועי חברה. הרצאה שמשאירה חותם.</p></div>
+            </article>
+                <article class="aud-tile t-custom">
+                    <div class="aud-tx"><h3>לא מצאתם את הקהל שלכם?</h3><p>התוכן, האורך והסגנון מותאמים לצרכים שלכם.</p></div>
+                    <a class="aud-cta" href="#contact-form">ספרו לי על האירוע <span aria-hidden="true">←</span></a>
+                </article>
             </div>
-            <ul class="aud-list">
-                    <li class="aud-item"><h3>תלמידים וצעירים</h3><p>תיכוניסטים, מכינות קדם צבאיות, צעירים לפני הצבא. על התמודדות, חוסן נפשי והערכת החיים.</p></li>
-                    <li class="aud-item"><h3>עובדים וארגונים</h3><p>צוותי עובדים, חברות, ארגונים. על התמודדות עם אתגרים, מוטיבציה והשראה בעבודה ובחיים.</p></li>
-                    <li class="aud-item"><h3>מבוגרים וקהילות</h3><p>קבוצות מבוגרים, קהילות, מרכזים קהילתיים. סיפור שמדבר אל הלב ומשאיר מסר חזק.</p></li>
-                    <li class="aud-item"><h3>מסגרות טיפוליות</h3><p>בתי ילדים, מסגרות שיקומיות, קבוצות תמיכה. על כוח השיקום והבחירה להמשיך.</p></li>
-                    <li class="aud-item"><h3>אירועים מיוחדים</h3><p>כנסים, ימי עיון, אירועי חברה. הרצאה שמשאירה חותם ומעוררת השראה.</p></li>
-                    <li class="aud-item"><h3>התאמה אישית</h3><p>התוכן, האורך והסגנון מותאמים לקהל ולצרכים שלכם.</p></li>
-            </ul>
         </div>
     </section>
 
