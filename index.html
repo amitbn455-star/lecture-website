@@ -1993,6 +1993,11 @@
         .t-custom p { color: #2C5555 !important; font-size: 18px; }
         .t-custom .aud-cta { background: var(--turquoise-dark); color: var(--white); font-family: inherit; font-size: 18px; font-weight: 700; padding: 16px 30px; }
         @media (hover: hover) { .t-custom .aud-cta:hover { background: var(--turquoise); } }
+        /* Photo pair between video and process */
+        section.photo-pair { padding: 0 !important; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: var(--white); }
+        .photo-pair figure { margin: 0; aspect-ratio: 3 / 2; overflow: hidden; }
+        .photo-pair img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        @media (max-width: 700px) { section.photo-pair { grid-template-columns: 1fr; } }
         /* Audiences */
         .aud { background: var(--off-white); padding: 96px 40px; }
         .aud-wrap { max-width: 1200px; margin: 0 auto; }
@@ -2153,6 +2158,11 @@
 
     
     <!-- Process Section -->
+    <section class="photo-pair" aria-label="תמונות מהרצאות">
+        <figure><img src="images/machina-speaker.webp" width="1200" height="744" alt="עמית מרצה בפני חניכי מכינה" loading="lazy" decoding="async"></figure>
+        <figure><img src="images/lecture-youth.webp" width="1200" height="900" alt="עמית מרצה לקבוצת צעירים" loading="lazy" decoding="async" style="object-position:82% 50%"></figure>
+    </section>
+
     <section class="process-section" id="process">
         <div class="container">
             <div>02 / המבנה</div>
@@ -2217,10 +2227,11 @@
             </header>
             <div class="aud-grid">
             <article class="aud-tile t-youth photo">
-                <img src="images/lecture-youth.webp" alt="עמית מעביר הרצאה לקבוצת צעירים" loading="lazy" decoding="async" style="object-position:80% 50%">
+                <img src="images/machina-room.webp" alt="עמית מרצה לחניכי מכינה, כשהתותבת בידו" loading="lazy" decoding="async" style="object-position:75% 50%">
                 <div class="aud-tx"><h3>תלמידים וצעירים</h3><p>תיכוניסטים, מכינות קדם צבאיות וצעירים לפני הצבא. על התמודדות, חוסן נפשי והערכת החיים.</p></div>
             </article>
-            <article class="aud-tile t-adults sand">
+            <article class="aud-tile t-adults photo">
+                <img src="images/seniors.webp" alt="עמית מרצה לקהל ותיקים, מול שקף ההרצאה" loading="lazy" decoding="async" style="object-position:62% 40%">
                 
                 <div class="aud-tx"><h3>מבוגרים וקהילות</h3><p>קבוצות מבוגרים, קהילות ומרכזים קהילתיים. סיפור שמדבר אל הלב ומשאיר מסר חזק.</p></div>
             </article>
