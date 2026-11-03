@@ -1986,7 +1986,7 @@
             .aud-cta:hover { background: var(--white); }
         }
         @media (max-width: 860px) {
-            .aud { padding: 64px 25px !important; }
+            section.aud.aud { padding: 64px 25px !important; }
             .aud-head { grid-template-columns: 1fr; margin-bottom: 30px; }
             .aud-grid { grid-template-columns: 1fr; }
             .t-youth, .t-adults, .t-work, .t-care, .t-events, .t-custom { grid-column: 1; }
@@ -2012,7 +2012,7 @@
                 <p id="hero-subtitle" class="hero-subtitle">סיפור אישי על שיקום, חוסן והבחירה להמשיך לחיות את החיים במלואם</p>
                 <a href="#contact-form" class="hero-cta">
                     <span>לתיאום הרצאה</span>
-                    <span>→</span>
+                    <span>←</span>
                 </a>
             </div>
         </div>
@@ -2333,19 +2333,10 @@
                     
                     <button type="submit" class="submit-btn">
                         <span class="btn-text">שלחו פנייה</span>
-                        <span class="btn-icon">→</span>
+                        <span class="btn-icon">←</span>
                     </button>
                     <p id="form-status" role="status" aria-live="polite" style="margin-top:16px;font-size:18px;font-weight:700;display:none"></p>
                 </form>
-                
-                <div id="form-success" class="form-message success-message" style="display: none;">
-                    <div class="message-icon">✓</div>
-                    <h3>תודה רבה!</h3>
-                    <p>קיבלתי את הפנייה ואחזור אליכם בהקדם</p>
-                </div>
-                
-                <div id="form-error" class="form-message error-message" style="display: none;">
-                    <div class="message-icon">✕</div>
                     <h3>אופס!</h3>
                     <p>משהו השתבש. נסו שוב או כתבו לי במייל</p>
                 </div>
@@ -2415,8 +2406,8 @@
             gap: 10px;
             animation: fadeInUp 0.3s ease;
         ">
-            <p style="font-size:15px; font-weight:700; color:#064E4E; margin:0 0 6px 0;">שלח הודעה מהירה לעמית</p>
-            <textarea id="wa-msg" aria-label="הודעה בוואטסאפ" rows="3" placeholder="מה תרצה לשאול? (אפשר לשנות את ההודעה)" style="
+            <p style="font-size:15px; font-weight:700; color:#064E4E; margin:0 0 6px 0;">כתבו לי הודעה מהירה</p>
+            <textarea id="wa-msg" aria-label="הודעה בוואטסאפ" rows="3" placeholder="מה תרצו לשאול? (אפשר לשנות את ההודעה)" style="
                 width:100%;
                 border: 2px solid #e0e0e0;
                 border-radius: 10px;
@@ -2562,6 +2553,8 @@
             if (fab && !fab.contains(e.target)) {
                 var popup = document.getElementById('wa-popup');
                 if (popup) popup.style.display = 'none';
+                var mainBtn = document.getElementById('wa-main-btn');
+                if (mainBtn) mainBtn.setAttribute('aria-expanded', 'false');
                 var iconOpen = document.getElementById('wa-icon-open');
                 var iconClose = document.getElementById('wa-icon-close');
                 if (iconOpen) iconOpen.style.display = 'block';
