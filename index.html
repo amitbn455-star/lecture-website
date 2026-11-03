@@ -1956,6 +1956,43 @@
 
     
 
+        /* Hero: show the whole portrait at any viewport (letterbox with a blurred copy of the photo) */
+        @media (min-width: 1025px) { .hero { height: 100vh; height: 100svh; min-height: 560px; } }
+        .hero-image { background: var(--turquoise-dark); }
+        .hero-image::before { content: ""; position: absolute; inset: -40px; background: url("images/hero-amit.webp") center / cover no-repeat; filter: blur(26px) saturate(1.05); transform: scale(1.1); opacity: .9; }
+        .hero-image img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+        @media (max-width: 1024px) {
+            section.hero .hero-image { width: 100%; align-self: start; min-height: 0 !important; max-height: 82vh !important; aspect-ratio: 3 / 4; }
+            section.hero .hero-image img { width: 100% !important; height: 100% !important; max-height: none !important; object-fit: contain !important; object-position: center !important; }
+        }
+
+        /* Direct contact strip */
+        .contact-strip { margin-top: 56px; background: var(--turquoise-dark); color: var(--white); border-radius: 6px; padding: 40px clamp(24px, 4vw, 56px); display: grid; grid-template-columns: 1fr; gap: 28px; font-family: inherit; }
+        .cs-intro h3 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 800; line-height: 1.2; margin: 0 0 10px; color: var(--white); text-align: right; }
+        .cs-intro p { margin: 0; color: #C4DEDB; font-size: 17px; line-height: 1.65; max-width: 34ch; }
+        .cs-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+        .cs-list li { border-inline-start: 1px solid rgba(244, 228, 193, .3); }
+        .cs-list li:first-child { border-inline-start: 0; }
+        .cs-list a { display: flex; align-items: center; gap: 12px; padding: 6px 16px; color: inherit; text-decoration: none; font-family: inherit; }
+        .cs-ic { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: var(--accent-sand); color: var(--turquoise-dark); display: inline-flex; align-items: center; justify-content: center; }
+        .cs-ic svg { width: 22px; height: 22px; }
+        .cs-tx { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+        .cs-k { font-size: 14px; color: var(--accent-sand); font-weight: 500; letter-spacing: .04em; }
+        .cs-v { font-size: 18px; font-weight: 700; color: var(--white); white-space: nowrap; }
+        @media (hover: hover) { .cs-list a:hover .cs-v { text-decoration: underline; text-underline-offset: 4px; } }
+        @media (max-width: 900px) {
+            .contact-strip { grid-template-columns: 1fr; padding: 32px 24px; }
+            .cs-list { grid-template-columns: 1fr; gap: 6px; }
+            .cs-list li { border-inline-start: 0; border-top: 1px solid rgba(244, 228, 193, .25); padding-top: 6px; }
+            .cs-list li:first-child { border-top: 0; padding-top: 0; }
+            .cs-list a { padding: 8px 0; }
+        }
+        /* Audiences: closing contact tile */
+        .t-custom { background: var(--accent-sand) !important; color: var(--turquoise-dark) !important; padding: 36px clamp(26px, 4vw, 52px); }
+        .t-custom h3 { font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; line-height: 1.12; margin: 0 0 10px; }
+        .t-custom p { color: #2C5555 !important; font-size: 18px; }
+        .t-custom .aud-cta { background: var(--turquoise-dark); color: var(--white); font-family: inherit; font-size: 18px; font-weight: 700; padding: 16px 30px; }
+        @media (hover: hover) { .t-custom .aud-cta:hover { background: var(--turquoise); } }
         /* Audiences */
         .aud { background: var(--off-white); padding: 96px 40px; }
         .aud-wrap { max-width: 1200px; margin: 0 auto; }
@@ -2266,16 +2303,16 @@
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 50px; padding: 30px; background: white; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; box-shadow: 0 4px 15px rgba(10, 107, 107, 0.15);">
-                <p style="font-size: 20px; color: #0A6B6B; font-weight: 800; margin-bottom: 20px;">יצירת קשר</p>
-                <p style="font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 600;">מייל:</p>
-                <p style="font-size: 17px; color: #0A6B6B; margin-bottom: 20px;">
-                    <a href="mailto:amitbn455@gmail.com" style="color: #0A6B6B; text-decoration: underline; font-weight: 600;">amitbn455@gmail.com</a>
-                </p>
-                <p style="font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 600;">טלפון:</p>
-                <p style="font-size: 17px; color: #0A6B6B; margin: 0;">
-                    <a href="tel:0585192003" style="color: #0A6B6B; text-decoration: underline; font-weight: 600;">058-519-2003</a>
-                </p>
+            <div class="contact-strip">
+                <div class="cs-intro">
+                    <h3>רוצים לדבר ישירות?</h3>
+                    <p>אפשר להתקשר, לכתוב במייל או לשלוח הודעה בוואטסאפ.</p>
+                </div>
+                <ul class="cs-list">
+                    <li><a href="tel:0585192003"><span class="cs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span><span class="cs-tx"><span class="cs-k">טלפון</span><bdi class="cs-v" dir="ltr">058-519-2003</bdi></span></a></li>
+                    <li><a href="mailto:amitbn455@gmail.com"><span class="cs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span><span class="cs-tx"><span class="cs-k">מייל</span><bdi class="cs-v" dir="ltr">amitbn455@gmail.com</bdi></span></a></li>
+                    <li><a href="https://wa.me/972585192003?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A2%D7%9E%D7%99%D7%AA%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%99%D7%95%D7%AA%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%94%D7%A8%D7%A6%D7%90%D7%94%20%F0%9F%99%8F" target="_blank" rel="noopener"><span class="cs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8L4 20z"></path><path d="M9 9.5c.3 2.2 2.3 4.2 4.5 4.5l1.2-1.2-1.7-1-.8.6a3 3 0 0 1-1.6-1.6l.6-.8-1-1.7L9 9.5z"></path></svg></span><span class="cs-tx"><span class="cs-k">וואטסאפ</span><span class="cs-v">שלחו לי הודעה</span></span></a></li>
+                </ul>
             </div>
         </div>
     </section>
