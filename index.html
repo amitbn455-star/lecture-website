@@ -2013,8 +2013,12 @@
         .aud-tx { position: relative; z-index: 1; }
         .aud-tile h3 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 800; line-height: 1.2; margin: 0 0 10px; }
         .aud-tile p { margin: 0; font-size: 16.5px; line-height: 1.65; max-width: 44ch; }
-        .t-youth { grid-column: span 4; min-height: 520px; }
-        .t-adults { grid-column: span 2; min-height: 520px; }
+        .t-youth { grid-column: span 4; min-height: 340px; }
+        .t-adults { grid-column: span 2; }
+        /* Seniors tile: regular size, whole photo shown as sent (no zoom), blurred copy fills the sides */
+        .t-adults::before { content: ""; position: absolute; inset: -30px; background: url("images/seniors.webp") center / cover no-repeat; filter: blur(22px); transform: scale(1.1); opacity: .9; }
+        .t-adults img { object-fit: contain; object-position: center; }
+        .t-adults.photo::after { background: linear-gradient(180deg, rgba(6,40,40,0) 58%, rgba(6,40,40,.9) 100%); }
         .t-work, .t-care, .t-events { grid-column: span 2; min-height: 330px; }
         .t-custom { grid-column: span 6; min-height: 0; flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
         .aud-tile.sand { background: var(--accent-sand); color: var(--turquoise-dark); }
@@ -2033,7 +2037,7 @@
             .aud-grid { grid-template-columns: 1fr; }
             .t-youth, .t-adults, .t-work, .t-care, .t-events, .t-custom { grid-column: 1; }
             .aud-tile { min-height: 230px; padding: 26px; }
-            .t-care { min-height: 0; } .t-youth { min-height: 300px; } .t-adults { min-height: 0; aspect-ratio: 3 / 4; } .aud-tile.photo { min-height: 300px; }
+            .t-care { min-height: 0; } .t-youth { min-height: 300px; } .aud-tile.photo { min-height: 300px; }
             .t-custom { flex-direction: column; align-items: flex-start; }
         }
         .method-icon { display: inline-flex; width: 26px; height: 26px; }
