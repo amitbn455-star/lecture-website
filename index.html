@@ -881,16 +881,11 @@
  .t-custom .aud-cta:hover { background: var(--turquoise); }
 }
 
-/* Photo pair between video and process */
-
-        section.photo-pair { padding: 0 !important; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: var(--white); }
-
-        .photo-pair figure { margin: 0; aspect-ratio: 3 / 2; overflow: hidden; }
-
-        .photo-pair img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (max-width: 700px) {
- section.photo-pair { grid-template-columns: 1fr; }
-}
+/* Single photo banners placed between sections */
+section.photo-banner { padding: 0 40px 70px; background: var(--white); }
+.photo-banner figure { margin: 0 auto; max-width: 1200px; aspect-ratio: 2.3 / 1; overflow: hidden; border-radius: 6px; }
+.photo-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 700px) { .photo-banner figure { aspect-ratio: 4 / 3; } }
 
 /* Contact form: light, thin lines, visible placeholders (old rule made them white-on-white) */
 
@@ -1137,10 +1132,6 @@
 
     
     <!-- Process Section -->
-    <section class="photo-pair" aria-label="תמונות מהרצאות">
-        <figure><img src="images/machina-speaker.webp" width="1200" height="744" alt="עמית מרצה בפני חניכי מכינה" loading="lazy" decoding="async"></figure>
-        <figure><img src="images/lecture-youth.webp" width="1200" height="900" alt="עמית מרצה לקבוצת צעירים" loading="lazy" decoding="async" style="object-position:82% 50%"></figure>
-    </section>
 
     <section class="process-section" id="process">
         <div class="container">
@@ -1197,6 +1188,10 @@
     
         
     <!-- Audience Types Section -->
+    <section class="photo-banner" aria-label="תמונה מהרצאה">
+        <figure><img src="images/machina-speaker.webp" width="1200" height="744" alt="עמית מרצה בפני חניכי מכינה" loading="lazy" decoding="async" style="object-position:50% 0%"></figure>
+    </section>
+
     <section class="aud" id="audiences">
         <div class="aud-wrap">
             <header class="aud-head">
@@ -1319,7 +1314,11 @@
     
     
 
-<!-- Contact Form Section -->
+<section class="photo-banner" aria-label="תמונה מהרצאה">
+        <figure><img src="images/lecture-youth.webp" width="1200" height="900" alt="עמית מרצה לקבוצת צעירים" loading="lazy" decoding="async" style="object-position:82% 50%"></figure>
+    </section>
+
+    <!-- Contact Form Section -->
     <section class="contact-form-section" id="contact-form">
         <div class="container">
             <div class="section-number">05 / צור קשר</div>
