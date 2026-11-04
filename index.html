@@ -816,21 +816,14 @@
             }
 }
 
-/* Hero: show the whole portrait at any viewport (letterbox with a blurred copy of the photo) */
+/* Hero: photo fills its panel edge to edge; the bottom-anchored crop only trims sky, so head-to-foot stays in frame */
 @media (min-width: 1025px) {
- .hero { height: 100vh; height: 100svh; min-height: 560px; }
+    .hero { height: 100vh; height: 100svh; min-height: 560px; }
 }
-
-        .hero-image { background: var(--turquoise-dark); }
-
-        .hero-image::before { content: ""; position: absolute; inset: -40px; background: url("images/hero-amit.webp") center / cover no-repeat; filter: blur(26px) saturate(1.05); transform: scale(1.1); opacity: .9; }
-
-        .hero-image img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
 @media (max-width: 1024px) {
-
-            section.hero .hero-image { width: 100%; align-self: start; min-height: 0 !important; max-height: 82vh !important; aspect-ratio: 3 / 4; }
-
-            section.hero .hero-image img { width: 100% !important; height: 100% !important; max-height: none !important; object-fit: contain !important; object-position: center !important; }
+    section.hero .hero-image { width: 100%; align-self: start; min-height: 0 !important; max-height: 82vh !important; aspect-ratio: 3 / 4; }
+    section.hero .hero-image img { width: 100% !important; height: 100% !important; max-height: none !important; object-fit: cover !important; object-position: center bottom !important; }
 }
 
 /* Direct contact strip */
